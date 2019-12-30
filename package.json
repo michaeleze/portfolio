@@ -3,20 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@types/graphql": "^14.5.0",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.8",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
+    "@types/react-swipeable-views": "^0.13.0",
+    "@types/react-transition-group": "^4.2.3",
+    "apollo-boost": "^0.4.4",
+    "concurrently": "^5.0.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
     "react": "^16.12.0",
+    "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-swipeable-views": "^0.13.3",
+    "storybook-react-router": "^1.0.8",
     "typescript": "3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 4000",
+    "start:dev": "concurrently --kill-others --raw \"npm run storybook\" \"npm run start\"",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +47,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-info": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
+    "@types/storybook-react-router": "^1.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "react-docgen-typescript-loader": "^3.6.0"
   }
 }
