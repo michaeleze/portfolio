@@ -1,11 +1,11 @@
 import React from 'react';
 import './index.css';
 
-const Project: React.FC = () => {
+const About: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Project</h1>
+        <h1>About</h1>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -22,4 +22,4 @@ const Project: React.FC = () => {
   );
 }
 
-export default Project;
+export default About;

@@ -1,7 +1,9 @@
 {
-  "name": "test-app",
+  "name": "portfolio-website",
+  "author": "michael eze",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://michaeleze.github.io/portfolio",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@types/graphql": "^14.5.0",
