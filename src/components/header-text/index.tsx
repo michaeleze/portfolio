@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
 interface IHeaderText {
+    textStrokeColor?: string;
     text?: string;
 };
 
@@ -10,7 +11,6 @@ const useStyles = makeStyles(theme => ({
     headerText: {
         display: 'flex',
         fontSize: '22vw',
-        color: 'transparent',
         left: '0',
         lineHeight: '.1vh',
         position: 'absolute',
@@ -19,19 +19,24 @@ const useStyles = makeStyles(theme => ({
         transform: 'translateY(-50%)',
         textTransform: 'uppercase',
         textAlign: 'center',
-        textFillColor: 'transparent',
-        textStrokeWidth: '1px',
-        textStrokeColor: '#fff',
+        WebkitTextFillColor: 'transparent',
+        WebkitTextStrokeWidth: '1px',
+        WebkitTextStrokeColor: '#fff',
         zIndex: 1,
     }
 }));
 
 const HeaderText = (props: IHeaderText) => {
-    const { text = "MICHAEL" } = props;
+    const { text = "MICHAEL", textStrokeColor } = props;
     const classes = useStyles();
 
     return (
-        <Typography className={classes.headerText} variant="h1" component="h1">
+        <Typography
+            className={classes.headerText}
+            component="h1"
+            style={{ WebkitTextStrokeColor: textStrokeColor }}
+            variant="h1"
+        >
             {text}
         </Typography>
     );

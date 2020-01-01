@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../img/bg_1.jpg';
 import './index.css';
 
 const About: React.FC = () => {
@@ -19,7 +18,6 @@ const About: React.FC = () => {
           Home
         </a>
         <p>Image below</p>
-        <img src={img} className="App-logo" alt="logo" />
       </header>
     </div>
   );
