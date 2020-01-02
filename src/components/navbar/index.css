@@ -4,17 +4,9 @@
   font-size: 2rem;
 }
 
-.textRuler {
-  background-color: white;
-  border-radius: 3px;
-  margin: 3px 0;
-  width: 3rem;
-}
-
 .logoText {
   color: white;
   display: block;
-  margin: 1vw;
   text-decoration: none;
 }
 
