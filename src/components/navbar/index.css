@@ -7,6 +7,7 @@
 .logoText {
   color: #ffdd00;
   display: block;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
 }
 
@@ -35,7 +36,7 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .white {
@@ -44,7 +45,7 @@
 }
 
 .fm-navbar-body Link {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 50px;
@@ -80,12 +81,6 @@
 
 .fm-navbar-nav span {
   transition: all .4s ease;
-}
-
-.fm-navbar-nav span:hover {
-  background: rgba(40, 40, 255, .1);
-  padding: 10px 25px;
-  border-radius: 5px;
 }
 
 .bt-menu {
@@ -128,7 +123,7 @@
   position: absolute;
   right: 20px;
   top: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .nav-lg a {

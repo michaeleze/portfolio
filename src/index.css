@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap&subset=cyrillic-ext,greek-ext');
+
 body {
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -14,7 +17,7 @@ body {
 .page-enter-active {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 400ms, transform 400ms;
+    transition: opacity 400ms ease, transform 400ms ease;
 }
 
 .page-exit {
@@ -25,5 +28,5 @@ body {
 .page-exit-active {
     opacity: 0;
     transform: scale(0.9);
-    transition: opacity 400ms, transform 400ms;
+    transition: opacity 400ms ease, transform 400ms ease;
 }
