@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 import NavBar from './components/navbar';
 import { routes, IRoutes } from './routes';
-import './app.css';
+import './index.css';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const App: React.FC = () => {
           {({ match }) => (
             <CSSTransition
               in={match != null}
-              timeout={300}
+              timeout={400}
               classNames="page"
               unmountOnExit
             >
