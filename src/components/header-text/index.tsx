@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
 
 interface IHeaderText {
     textStrokeColor?: string;
@@ -12,8 +11,10 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         fontSize: '22vw',
         fontFamily: '"Open Sans", sans-serif',
+        justifyContent: 'center',
         left: '0',
         lineHeight: '.1vh',
+        margin: 'auto',
         position: 'absolute',
         right: '0',
         top: '50%',
@@ -32,15 +33,13 @@ const HeaderText = (props: IHeaderText) => {
     const classes = useStyles();
 
     return (
-        <Typography
+        <h1
             className={classes.headerText}
-            component="h1"
             style={{ WebkitTextStrokeColor: textStrokeColor }}
-            variant="h1"
         >
             <span>{text}</span>
             <span>.</span>
-        </Typography>
+        </h1>
     );
 };
 
