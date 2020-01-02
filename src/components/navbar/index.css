@@ -4,17 +4,9 @@
   font-size: 2rem;
 }
 
-.textRuler {
-  background-color: white;
-  border-radius: 3px;
-  margin: 3px 0;
-  width: 3rem;
-}
-
 .logoText {
-  color: white;
+  color: #ffdd00;
   display: block;
-  margin: 1vw;
   text-decoration: none;
 }
 
@@ -36,10 +28,6 @@
   color: #111;
 }
 
-.fm-navbar-body Link {
-  color: rgb(85, 26, 139)
-}
-
 .fm-navbar-menu {
   position: fixed;
   top: 0;
@@ -53,17 +41,6 @@
 .white {
   background: white;
   border-bottom: 1px solid #ebebeb;
-}
-
-.fm-navbar-body {
-  padding: 10px 0;
-  display: grid;
-  /* background: white;
-    //border-bottom: 1px solid #ebebeb;
-    // background:$purple;
-    // border-bottom:2px solid yellow;
-    //    background:#3333337a;
-    //    grid-template-columns:auto auto; */
 }
 
 .fm-navbar-body Link {

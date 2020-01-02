@@ -36,7 +36,6 @@ class NavBar extends Component {
                                 <NavLink className='logoText' to='/'>
                                     <span> MICHAEL</span>
                                     <span className='dotText'> . </span>
-                                    <hr className="textRuler"/>
                                 </NavLink>
                             </div>
                             <div className='nav-lg'>
