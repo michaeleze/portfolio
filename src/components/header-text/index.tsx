@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     headerText: {
         display: 'flex',
         fontSize: '22vw',
+        fontFamily: '"Open Sans", sans-serif',
         left: '0',
         lineHeight: '.1vh',
         position: 'absolute',
@@ -20,8 +21,8 @@ const useStyles = makeStyles(theme => ({
         textTransform: 'uppercase',
         textAlign: 'center',
         WebkitTextFillColor: 'transparent',
-        WebkitTextStrokeWidth: '1px',
-        WebkitTextStrokeColor: '#fff',
+        WebkitTextStrokeWidth: '3px',
+        WebkitTextStrokeColor: '#ffdd00',
         zIndex: 1,
     }
 }));
@@ -37,7 +38,8 @@ const HeaderText = (props: IHeaderText) => {
             style={{ WebkitTextStrokeColor: textStrokeColor }}
             variant="h1"
         >
-            {text}
+            <span>{text}</span>
+            <span>.</span>
         </Typography>
     );
 };

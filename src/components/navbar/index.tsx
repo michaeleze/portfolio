@@ -34,8 +34,8 @@ class NavBar extends Component {
                         <div className='logo'>
                             <div className={open ? 'txt-black' : ''}>
                                 <NavLink className='logoText' to='/'>
-                                    <span> MICHAEL</span>
-                                    <span className='dotText'> . </span>
+                                    <b> MICHAEL</b>
+                                    <b className='dotText'>.</b>
                                 </NavLink>
                             </div>
                             <div className='nav-lg'>
