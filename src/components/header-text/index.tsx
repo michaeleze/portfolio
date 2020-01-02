@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const HeaderText = (props: IHeaderText) => {
+const HeaderText: React.FC<IHeaderText> = (props) => {
     const { text = "MICHAEL", textStrokeColor } = props;
     const classes = useStyles();
 

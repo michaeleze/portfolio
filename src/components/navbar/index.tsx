@@ -2,8 +2,8 @@
 
 import React, { Component, SyntheticEvent } from 'react';
 import { NavLink } from "react-router-dom";
+import { routes, IRoutes } from '../../routes';
 import './index.css';
-
 class NavBar extends Component {
     state = {
         open: false,
@@ -26,6 +26,7 @@ class NavBar extends Component {
 
     render() {
         const { open, navbarWhite } = this.state;
+        routes.shift();
 
         return (
             <div className='fm-navbar-menu'>
@@ -40,9 +41,18 @@ class NavBar extends Component {
                             </div>
                             <div className='nav-lg'>
                                 <div className='item'>
-                                    <NavLink exact={true} activeClassName='is-active' to='/about'> ABOUT </NavLink>
-                                    <NavLink activeClassName='is-active' to='/work'> WORK </NavLink>
-                                    <NavLink activeClassName='is-active' to='/contact'> CONTACT </NavLink>
+                                    {
+                                        routes.map(({ name, path }: IRoutes) => (
+                                            <NavLink
+                                                activeClassName='is-active'
+                                                exact={true}
+                                                key={name}
+                                                to={path}
+                                            >
+                                                {name}
+                                            </NavLink>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -52,9 +62,18 @@ class NavBar extends Component {
                             {open &&
                                 <>
                                     <div className='nav'>
-                                        <NavLink exact={true} activeClassName='is-active' to='/about'> ABOUT </NavLink>
-                                        <NavLink activeClassName='is-active' to='/work'> WORK </NavLink>
-                                        <NavLink activeClassName='is-active' to='/contact'> CONTACT </NavLink>
+                                        {
+                                            routes.map(({ name, path }: IRoutes) => (
+                                                <NavLink
+                                                    activeClassName='is-active'
+                                                    exact={true}
+                                                    key={name}
+                                                    to={path}
+                                                >
+                                                    {name}
+                                                </NavLink>
+                                            ))
+                                        }
                                     </div>
                                     <div className='fm-navbar-social'>
                                         <ul>
