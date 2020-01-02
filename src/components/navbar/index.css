@@ -40,7 +40,7 @@
 
 .white {
   background: white;
-  border-bottom: 1px solid #ebebeb;
+  color: #111;
 }
 
 .fm-navbar-body Link {
@@ -145,16 +145,9 @@
   transition: all .2s ease;
 }
 
+.is-active, 
 .nav-lg a:hover {
-  background: #F50057;
-  border-radius: 5px;
-  padding: 10px 25px;
-}
-
-.is-active {
-  background: #F50057;
-  border-radius: 5px;
-  padding: 10px 25px;
+color: #ffdd00 !important;
 }
 
 @media screen and (max-width:769px) {
