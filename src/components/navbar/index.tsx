@@ -33,7 +33,11 @@ class NavBar extends Component {
                     <div className={`fm-navbar-body ${navbarWhite}`}>
                         <div className='logo'>
                             <div className={open ? 'txt-black' : ''}>
-                                <NavLink className='logoText' to='/'> MICHAEL </NavLink>
+                                <NavLink className='logoText' to='/'>
+                                    <span> MICHAEL</span>
+                                    <span className='dotText'> . </span>
+                                    <hr className="textRuler"/>
+                                </NavLink>
                             </div>
                             <div className='nav-lg'>
                                 <div className='item'>
