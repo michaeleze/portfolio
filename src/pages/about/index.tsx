@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
   bio: {
     fontSize: '4em',
     padding: 0,
+    margin: 0
   },
   container: {
     fontWeight: 700,
