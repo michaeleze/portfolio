@@ -15,16 +15,16 @@ const useStyles = makeStyles(theme => ({
         position: 'relative',
     },
     columnOne: {
-        display: 'flex',
         alignItems: 'center',
+        display: 'flex',
         justifyContent: 'center',
         [theme.breakpoints.down('sm')]: {
             order: 2,
         },
     },
     columnTwo: {
-        display: 'flex',
         alignItems: 'center',
+        display: 'flex',
         justifyContent: 'center',
         [theme.breakpoints.down('sm')]: {
             order: 1,
@@ -48,16 +48,16 @@ const Header: React.FC<IHeader> = (props) => {
                 className={classes.columnOne}
                 children={columnOneContent}
                 md={6}
-                xs={12}
                 style={{ background: columnOneBackground }}
+                xs={12}
             />
             <Grid
                 item
                 className={classes.columnTwo}
                 children={columnTwoContent}
                 md={6}
+                style={{ background: columnTwoBackground, backgroundSize: 'cover' }}
                 xs={12}
-                style={{ background: columnTwoBackground }}
             />
         </Grid>
     );
