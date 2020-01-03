@@ -1,9 +1,13 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import Header from '../../components/header';
+import SummaryText from '../../components/summary-text';
+// import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 interface IAboutText {
-  classes: Record<"bio" | "container" | "name", string>;
+  classes: Record<"bio" | "container" | "email" | "emailContainer" | "linkHome" | "name" , string>;
 }
 
 const useStyles = makeStyles(() => ({
@@ -16,23 +20,44 @@ const useStyles = makeStyles(() => ({
     fontWeight: 700,
     height: 'auto',
     letterSpacing: '0.03em',
-    lineHeight: '1.2',
+    lineHeight: '1',
     margin: '0 auto',
     width: '70%'
   },
+  email: {
+    backgroundColor: '#ffdd00',
+    borderRadius: '5px',
+    color: 'white',
+    cursor: 'pointer',
+    padding: '8px 15px',
+    textDecoration: 'none',
+  },
+  emailContainer: {
+    padding: '15px 0',
+  },
+  linkHome: {
+    bottom: '15px',
+    color: '#111',
+    fontWeight: 100,
+    lineHeight: 1.5,
+    position: 'relative',
+    textDecoration: 'none',
+  },
   name: {
-    color: 'red',
+    color: '#ffdd00',
     fontSize: '1.5em',
     padding: 0,
-  }
+  },
 }));
 
 const AboutText: React.FC<IAboutText> = ({ classes }) => (
   <div className={classes.container}>
-    <h1 className={classes.name}> Michael C. Eze </h1>
-    <h2 className={classes.bio}> <b>Software Engineer, Designer and UX Expert</b></h2>
-    <p>michaeleze3@gmail.com</p>
-    <a href="https://linkedin.com/in/michaeleze">Linkedin logo</a>
+    <Typography variant="caption"><Link to='/' className={classes.linkHome}>GO HOME</Link></Typography>
+    <Typography className={classes.name}> Michael C. Eze </Typography>
+    <Typography variant="h1" className={classes.bio}> <b>Bring Your Imaginations to Life</b></Typography>
+    <SummaryText />
+    <Typography className={classes.emailContainer}><a className={classes.email} href="mailto:michaeleze3@gmail.com"> Say Hi</a></Typography>
+    <a href="https://linkedin.com/in/michaeleze">linkedin</a>
     <a href="https://twitter.com/michaelcityboy">Twitter Logo</a>
   </div>
 )
@@ -40,11 +65,7 @@ const AboutText: React.FC<IAboutText> = ({ classes }) => (
 const About: React.FC = () => {
   const classes = useStyles();
 
-  return (
-    <section>
-      <Header columnOneBackground="white" columnOneContent={<AboutText classes={classes} />} />
-    </section>
-  );
+  return <Header columnOneBackground="white" columnOneContent={<AboutText classes={classes} />} />;
 }
 
 export default About;
