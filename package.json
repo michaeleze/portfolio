@@ -33,7 +33,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 4000",
     "start:dev": "concurrently --kill-others --raw \"npm run storybook\" \"npm run start\"",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,9 +60,10 @@
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
     "@types/storybook-react-router": "^1.0.0",
-    "storybook-react-router": "^1.0.8",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
-    "react-docgen-typescript-loader": "^3.6.0"
+    "gh-pages": "^2.1.1",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "storybook-react-router": "^1.0.8"
   }
 }
