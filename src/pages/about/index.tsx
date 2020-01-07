@@ -54,7 +54,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const backgroundImage: string = `url(${M8}) no-repeat center`;
+//const backgroundImage: string = `url(${M8}) no-repeat center`;
 
 const AboutText: React.FC<IAboutText> = ({ classes }) => (
   <div className={classes.container}>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
       columnOneBackground="white"
       columnTwoBackground={"white"}
       columnOneContent={<AboutText classes={classes} />}
-      columnTwoContent={<img alt="about-michaeleze" className={classes.aboutImg} src={backgroundImage} />}
+      columnTwoContent={<img alt="about-michaeleze" className={classes.aboutImg} src={M8} />}
     />
   )
 }
