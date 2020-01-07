@@ -1,13 +1,13 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import SummaryText from '../../components/summary-text';
+import M8 from '../../assets/images/m8.jpg'
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 interface IAboutText {
-  classes: Record<"bio" | "container" | "email" | "emailContainer" | "linkHome" | "name" , string>;
+  classes: Record<"bio" | "container" | "email" | "emailContainer" | "linkHome" | "name", string>;
 }
 
 const useStyles = makeStyles(() => ({
@@ -50,9 +50,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const backgroundImage: string = `url(${M8}) no-repeat center`;
+
 const AboutText: React.FC<IAboutText> = ({ classes }) => (
   <div className={classes.container}>
-    <Typography variant="caption"><Link to='/' className={classes.linkHome}>GO HOME</Link></Typography>
     <Typography className={classes.name}> Michael C. Eze </Typography>
     <Typography variant="h1" className={classes.bio}> <b>Bring Your Imaginations to Life</b></Typography>
     <SummaryText />
@@ -65,7 +66,7 @@ const AboutText: React.FC<IAboutText> = ({ classes }) => (
 const About: React.FC = () => {
   const classes = useStyles();
 
-  return <Header columnOneBackground="white" columnOneContent={<AboutText classes={classes} />} />;
+  return <Header columnOneBackground="white" columnTwoBackground={backgroundImage} columnOneContent={<AboutText classes={classes} />} />;
 }
 
 export default About;
