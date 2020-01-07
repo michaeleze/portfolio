@@ -11,6 +11,10 @@ interface IAboutText {
 }
 
 const useStyles = makeStyles(() => ({
+  aboutImg: {
+    maxWidth: '60%',
+    borderRadius: '5px'
+  },
   bio: {
     fontSize: '4em',
     padding: 0,
@@ -66,7 +70,14 @@ const AboutText: React.FC<IAboutText> = ({ classes }) => (
 const About: React.FC = () => {
   const classes = useStyles();
 
-  return <Header columnOneBackground="white" columnTwoBackground={backgroundImage} columnOneContent={<AboutText classes={classes} />} />;
+  return (
+    <Header
+      columnOneBackground="white"
+      columnTwoBackground={"white"}
+      columnOneContent={<AboutText classes={classes} />}
+      columnTwoContent={<img alt="about-michaeleze" className={classes.aboutImg} src={backgroundImage} />}
+    />
+  )
 }
 
 export default About;
