@@ -4,6 +4,7 @@ import React, { Component, SyntheticEvent } from 'react';
 import { NavLink } from "react-router-dom";
 import { routes, IRoutes } from '../../routes';
 import './index.css';
+
 class NavBar extends Component {
     state = {
         open: false,
@@ -24,9 +25,10 @@ class NavBar extends Component {
         this.setState({ open: !this.state.open });
     }
 
+    navRoutes = routes.splice(1);
+
     render() {
         const { open, navbarWhite } = this.state;
-        routes.shift();
 
         return (
             <div className='fm-navbar-menu'>
@@ -35,14 +37,14 @@ class NavBar extends Component {
                         <div className='logo'>
                             <div className={open ? 'txt-black' : ''}>
                                 <NavLink className='logoText' to='/'>
-                                    <b> MICHAEL</b>
+                                    <b> Michael</b>
                                     <b className='dotText'>.</b>
                                 </NavLink>
                             </div>
                             <div className='nav-lg'>
                                 <div className='item'>
                                     {
-                                        routes.map(({ name, path }: IRoutes) => (
+                                        this.navRoutes.map(({ name, path }: IRoutes) => (
                                             <NavLink
                                                 activeClassName='is-active'
                                                 exact={true}
@@ -63,7 +65,7 @@ class NavBar extends Component {
                                 <>
                                     <div className='nav'>
                                         {
-                                            routes.map(({ name, path }: IRoutes) => (
+                                            this.navRoutes.map(({ name, path }: IRoutes) => (
                                                 <NavLink
                                                     activeClassName='is-active'
                                                     exact={true}

@@ -48,7 +48,7 @@ const Header: React.FC<IHeader> = (props) => {
                 className={classes.columnOne}
                 children={columnOneContent}
                 md={6}
-                style={{ background: columnOneBackground }}
+                style={{ background: columnOneBackground, backgroundSize: 'contain'}}
                 xs={12}
             />
             <Grid
