@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
-import NavBar from './components/navbar';
+// import NavBar from './components/navbar';
 import { routes, IRoutes } from './routes';
 import './index.css';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
       {routes.map(({ path, Component }: IRoutes) => (
         <Route key={path} exact path={path}>
           {({ match }) => (

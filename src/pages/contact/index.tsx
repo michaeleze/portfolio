@@ -2,30 +2,22 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Header from '../../components/header';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
-import Bottle from '../../assets/images/bottle.png';
+import Bottle from '../../assets/images/bottle2.png';
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
 interface IContact {
   caption?: string;
   content?: string;
   email?: string;
 }
-
 interface ISocialMedia {
   link: string;
   icon: JSX.Element;
 }
 
 const useStyles = makeStyles(() => ({
-  AppHeader: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 'calc(15px + 2vmin)',
-    textAlign: 'center',
-  },
   AppLink: {
     '&:hover': {
       color: ' #09d3ac',
@@ -33,15 +25,13 @@ const useStyles = makeStyles(() => ({
     textDecoration: 'none',
   },
   email: {
-    fontWeight: 800,
+    fontWeight: 200,
   },
   img: {
-    maxWidth: '40%',
+    maxWidth: '20%',
   },
   listItems: {
     listStyle: 'none',
-    paddingLeft: '15px',
-    paddingRight: '15px',
   },
   socialMediaItem: {
     display: 'flex',
@@ -80,24 +70,34 @@ const SocialMediaList = (props: any) => {
   );
 };
 
-const Contact: React.FC<IContact> = (props) => {
-  const {
-    caption = 'Find me on social media, or write me an email',
-    content = "Say hi. Let's work together",
-    email = 'michaeleze3@gmail.com',
-  } = props;
+const ContactContent: React.FC<any> = ({
+  caption = 'Find me on social media, or write me an email',
+  classes,
+  content = "Say hi. Let's work together",
+  email = 'michaeleze3@gmail.com',
+}) => (
+  <div className={classes.container}>
+    <Typography component="h1" variant="h1"> {content} </Typography>
+    <SocialMediaList classes={classes} />
+    <Typography component="p" variant="body1">
+      <span>{caption}</span>
+      <a className={classes.email}>{email}</a>
+    </Typography>
+  </div>
+)
 
+const Contact: React.FC<IContact> = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.AppHeader}>
-      <Typography component="h1" variant="h1"> {content} </Typography>
-      <SocialMediaList
-        classes={classes}
+    <>
+      <Header
+        columnOneBackground="white"
+        columnTwoBackground={"white"}
+        columnOneContent={<ContactContent classes={classes} {...props} />}
+        columnTwoContent={<img alt="message michael eze" className={classes.img} src={Bottle} />}
       />
-      <Typography component="p" variant="body1"> {caption} <a className={classes.email}>{email}</a></Typography>
-      <img alt="message michael eze" className={classes.img} src={Bottle} />
-    </div>
+    </>
   );
 }
 
