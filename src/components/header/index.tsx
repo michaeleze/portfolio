@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
     columnOne: {
         alignItems: 'center',
         display: 'flex',
+        flexWrap: 'wrap',
         justifyContent: 'center',
         [theme.breakpoints.down('sm')]: {
             order: 2,

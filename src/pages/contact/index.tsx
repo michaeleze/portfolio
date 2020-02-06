@@ -4,7 +4,6 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from '../../components/header';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
-import Bottle from '../../assets/images/bottle2.png';
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 interface IContact {
@@ -28,7 +27,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: 200,
   },
   img: {
-    maxWidth: '20%',
+    maxWidth: '100%',
   },
   listItems: {
     listStyle: 'none',
@@ -73,11 +72,11 @@ const SocialMediaList = (props: any) => {
 const ContactContent: React.FC<any> = ({
   caption = 'Find me on social media, or write me an email',
   classes,
-  content = "Say hi. Let's work together",
+  content = "SAY HI. LET'S WORK TOGETHER",
   email = 'michaeleze3@gmail.com',
 }) => (
   <div className={classes.container}>
-    <Typography component="h1" variant="h1"> {content} </Typography>
+    <Typography component="h1" variant="h2"> {content} </Typography>
     <SocialMediaList classes={classes} />
     <Typography component="p" variant="body1">
       <span>{caption}</span>
@@ -93,9 +92,8 @@ const Contact: React.FC<IContact> = (props) => {
     <>
       <Header
         columnOneBackground="white"
-        columnTwoBackground={"white"}
+        columnTwoBackground="url('https://images.pexels.com/photos/292426/pexels-photo-292426.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 2520w') center / cover"
         columnOneContent={<ContactContent classes={classes} {...props} />}
-        columnTwoContent={<img alt="message michael eze" className={classes.img} src={Bottle} />}
       />
     </>
   );
