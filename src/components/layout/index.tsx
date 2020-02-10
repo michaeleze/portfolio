@@ -1,39 +1,14 @@
 import React, { ReactElement } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-
-interface IHeader {
+import { useStyles } from './index.style';
+interface ILayout {
     columnOneBackground?: string;
     columnTwoBackground?: string;
     columnOneContent?: string | ReactElement;
     columnTwoContent?: string | ReactElement;
 }
 
-const useStyles = makeStyles(theme => ({
-    container: {
-        minHeight: '100vh',
-        position: 'relative',
-    },
-    columnOne: {
-        alignItems: 'center',
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
-            order: 2,
-        },
-    },
-    columnTwo: {
-        alignItems: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
-            order: 1,
-        },
-    }
-}));
-
-const Header: React.FC<IHeader> = (props) => {
+const Layout: React.FC<ILayout> = (props) => {
     const {
         columnOneBackground = '#ff006d',
         columnTwoBackground = '#282c34',
@@ -48,7 +23,7 @@ const Header: React.FC<IHeader> = (props) => {
                 item
                 className={classes.columnOne}
                 children={columnOneContent}
-                md={6}
+                sm={6}
                 style={{ background: columnOneBackground, backgroundSize: 'contain'}}
                 xs={12}
             />
@@ -56,7 +31,7 @@ const Header: React.FC<IHeader> = (props) => {
                 item
                 className={classes.columnTwo}
                 children={columnTwoContent}
-                md={6}
+                sm={6}
                 style={{ background: columnTwoBackground, backgroundSize: 'cover' }}
                 xs={12}
             />
@@ -64,4 +39,4 @@ const Header: React.FC<IHeader> = (props) => {
     );
 };
 
-export default Header;
+export default Layout;

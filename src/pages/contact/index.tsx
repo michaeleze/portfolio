@@ -2,7 +2,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Header from '../../components/header';
+import Layout from '../../components/layout';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -25,9 +25,6 @@ const useStyles = makeStyles(() => ({
   },
   email: {
     fontWeight: 200,
-  },
-  img: {
-    maxWidth: '100%',
   },
   listItems: {
     listStyle: 'none',
@@ -90,7 +87,7 @@ const Contact: React.FC<IContact> = (props) => {
 
   return (
     <>
-      <Header
+      <Layout
         columnOneBackground="white"
         columnTwoBackground="url('https://images.pexels.com/photos/292426/pexels-photo-292426.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 2520w') center / cover"
         columnOneContent={<ContactContent classes={classes} {...props} />}

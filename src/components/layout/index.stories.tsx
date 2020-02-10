@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Header from './index'; 
+import Layout from './index'; 
 
-export const header = () => <Header />;
+export const header = () => <Layout />;
 
 export default {
   title: 'Home | Header',
