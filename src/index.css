@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Biotif';
-    src: local('Biotif'), url('./assets/biotif/Biotif-Black.ttf') format('ttf'), url('./assets/biotif/Biotif-Bold.ttf') format('ttf')
-          url('./assets/biotif/Biotif-Book.ttf') format('ttf'), url('./assets/biotif/Biotif-ExtraBold.ttf') format('ttf'),
-          url('./assets/biotif/Biotif-Light.ttf') format('ttf'), url('./assets/biotif/Biotif-Medium.ttf') format('ttf');
+    src: local('Biotif'), url('./assets/font/Biotif-Black.ttf') format('ttf'), url('./assets/font/Biotif-Bold.ttf') format('ttf')
+          url('./assets/font/Biotif-Book.ttf') format('ttf'), url('./assets/font/Biotif-ExtraBold.ttf') format('ttf'),
+          url('./assets/font/Biotif-Light.ttf') format('ttf'), url('./assets/font/Biotif-Medium.ttf') format('ttf');
   }
 
 body {

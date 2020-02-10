@@ -10,7 +10,7 @@ const Title: React.FC<IHeaderText> = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.headerText}>
+        <div className={classes.container}>
             <img alt="michal eze" className={classes.img} src={TitleImage} />
         </div>
     );

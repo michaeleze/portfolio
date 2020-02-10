@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
-import Grid from '@material-ui/core/Grid';
+import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import { routes, IRoutes } from '../../routes';
 
 interface INavBar {
     columnOneBackground?: string;
@@ -11,55 +12,31 @@ interface INavBar {
 
 const useStyles = makeStyles(theme => ({
     container: {
-        minHeight: '100vh',
-        position: 'relative',
-    },
-    columnOne: {
-        alignItems: 'center',
         display: 'flex',
-        justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
-            order: 2,
-        },
+        justifyContent: 'space-between',
+        paddingBottom: '15px',
+        paddingTop: '15px',
+        position: 'fixed',
+        width: '20%',
+        zIndex: 2,
     },
-    columnTwo: {
-        alignItems: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
-            order: 1,
-        },
+    navLink: {
+        color: '#ffdd00',
+        textDecoration: 'none',
     }
 }));
 
-const NavBar: React.FC<INavBar> = (props) => {
-    const {
-        columnOneBackground = '#ff006d',
-        columnTwoBackground = '#282c34',
-        columnOneContent,
-        columnTwoContent,
-    } = props;
+const NavBar: React.FC<INavBar> = () => {
     const classes = useStyles();
 
     return (
-        <Grid container className={classes.container}>
-            <Grid
-                item
-                className={classes.columnOne}
-                children={columnOneContent}
-                md={6}
-                style={{ background: columnOneBackground, backgroundSize: 'contain'}}
-                xs={12}
-            />
-            <Grid
-                item
-                className={classes.columnTwo}
-                children={columnTwoContent}
-                md={6}
-                style={{ background: columnTwoBackground, backgroundSize: 'cover' }}
-                xs={12}
-            />
-        </Grid>
+        <div className={classes.container}>
+            {
+                routes.map(({ name, path }: IRoutes) => (
+                    <div key={name}><NavLink className={classes.navLink} to={path}>{name}</NavLink></div>
+                ))
+            }
+        </div>
     );
 };
 

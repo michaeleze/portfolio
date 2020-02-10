@@ -1,13 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
-    headerText: {
+    container: {
         color: '#fff',
         display: 'flex',
         fontSize: '21vw',
         left: '0',
         lineHeight: 1,
-        maxWidth: '70%',
+        maxWidth: '90%',
         position: 'absolute',
         right: '0',
         top: '50%',
