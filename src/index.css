@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap&subset=cyrillic-ext,greek-ext');
+@font-face {
+    font-family: 'Biotif';
+    src: local('Biotif'), url('./assets/font/Biotif-Black.ttf') format('ttf'), url('./assets/font/Biotif-Bold.ttf') format('ttf')
+          url('./assets/font/Biotif-Book.ttf') format('ttf'), url('./assets/font/Biotif-ExtraBold.ttf') format('ttf'),
+          url('./assets/font/Biotif-Light.ttf') format('ttf'), url('./assets/font/Biotif-Medium.ttf') format('ttf');
+  }
 
 body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Biotif';
 }
 
 .container {

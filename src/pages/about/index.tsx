@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Header from '../../components/header';
+import Layout from '../../components/layout';
 import SummaryText from '../../components/summary-text';
 import M8 from '../../assets/images/m8.jpg'
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -71,7 +71,7 @@ const About: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Header
+    <Layout
       columnOneBackground="white"
       columnTwoBackground={"white"}
       columnOneContent={<AboutText classes={classes} />}
