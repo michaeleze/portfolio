@@ -3,7 +3,7 @@
   "author": "michael eze <https://linkedin.com/in/michaeleze>",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://michaeleze.github.io/portfolio",
+  "homepage": ".",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.9.1",
@@ -37,9 +37,8 @@
     "storybook": "start-storybook -p 4000",
     "start:dev": "concurrently --kill-others --raw \"npm run storybook\" \"npm run start\"",
     "build-storybook": "build-storybook",
-    "build:server": "tsc server/index",
-    "start:server": "node lib/index.js",
-    "run:server": " npm run build:server && npm run start:server"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -64,9 +63,10 @@
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
     "@types/storybook-react-router": "^1.0.0",
-    "storybook-react-router": "^1.0.8",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
-    "react-docgen-typescript-loader": "^3.6.0"
+    "gh-pages": "^2.1.1",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "storybook-react-router": "^1.0.8"
   }
 }
