@@ -15,7 +15,6 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         justifyContent: 'space-between',
         transition: 'all 1s cubic-bezier(0,2,.55,.27)',
-        padding: '1rem',
         zIndex: 2,
     },
     footer: {
@@ -58,6 +57,9 @@ export const useStyles = makeStyles(theme => ({
 
         ['@media (max-width: 978px)']: {
             flexDirection: 'column',
+            fontSize: '2.5rem',
+            padding: '1em 0'
+
         }
     },
     socialMedia: {

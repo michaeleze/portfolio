@@ -6,9 +6,10 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'row',
     },
     container: {
-        position: 'sticky',
+        position: 'fixed',
         top: 0,
-        padding: '1rem',
+        padding: '1rem 0',
+        width: '100%',
         zIndex: 3
     },
     button: {
@@ -16,6 +17,7 @@ export const useStyles = makeStyles(theme => ({
         border: 'none',
         cursor: 'pointer',
         display: 'flex',
+        padding: 0,
         flexGrow: 0,
         transition: 'all 1s ease',
         outline: 'none'
@@ -67,6 +69,7 @@ export const useStyles = makeStyles(theme => ({
         flexGrow: 1,
         padding: '15px',
         textDecoration: 'none',
+        color: '#ffdd00',
 
         '&:hover': {
             cursor: 'pointer'

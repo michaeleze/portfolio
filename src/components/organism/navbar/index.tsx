@@ -34,23 +34,23 @@ const NavBar: React.FC<INavbar> = (props) => {
     return (
         openMenu &&
             <div className={classes.container}>
-            <div className={classes.navMenu}>
-            {
-                routes && routes.map(({ name, path }: IRoutes) => (
-                    <div key={name}>
-                    <NavLink
-                        activeClassName={classes.active}
-                        className={classes.navLink}
-                        exact={true}
-                        onClick={handleItemClick}
-                        to={path}
-                    >
-                        {name}
-                    </NavLink>
-                    </div>
-                ))
-            }
-            </div>
+                <div className={classes.navMenu}>
+                {
+                    routes && routes.map(({ name, path }: IRoutes) => (
+                        <div key={name}>
+                        <NavLink
+                            activeClassName={classes.active}
+                            className={classes.navLink}
+                            exact={true}
+                            onClick={handleItemClick}
+                            to={path}
+                        >
+                            {name}
+                        </NavLink>
+                        </div>
+                    ))
+                }
+                </div>
                 <Footer footer={footer} socialMedia={socialMedia} />
             </div>
     );
