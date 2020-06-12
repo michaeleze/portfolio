@@ -6,11 +6,10 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'row',
     },
     container: {
-        background: 'white',
         position: 'sticky',
         top: 0,
         padding: '1rem',
-        zIndex: 1
+        zIndex: 3
     },
     button: {
         background: 'none',

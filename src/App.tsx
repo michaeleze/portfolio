@@ -9,6 +9,10 @@ import NavBarHeader from "./components/molecule/navbar-header";
 const App: React.FC = () => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
 
+    const handleItemClick = () => {
+        setOpenMenu(false);
+    };
+
     const handleOpenMenu = () => {
         setOpenMenu(!openMenu);
     };
@@ -16,7 +20,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
         <NavBarHeader onClick={handleOpenMenu} openMenu={openMenu}/>
-        <NavBar openMenu={openMenu}/>
+        <NavBar handleItemClick={handleItemClick} openMenu={openMenu}/>
       {Routes.map(({ path, Component }: IRoutes) => (
         <Route key={path} exact path={path}>
           {({ match }) => (

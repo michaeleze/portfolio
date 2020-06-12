@@ -13,7 +13,7 @@ const NavBarHeader: React.FC<NavBarHeader> = (props) => {
         menu = 'MENU',
         onClick: handleOpenMenu,
         openMenu,
-        title = 'michaeleze.co',
+        title = 'MICHAELEZE.CO',
     } = props;
     const classes = useStyles();
 
