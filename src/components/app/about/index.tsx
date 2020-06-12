@@ -1,15 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import HtmlText from '../../components/html-text';
-import M8 from '../../assets/images/m8.jpg';
+import HtmlText from '../../atom/html-text';
+import M8 from '../../../assets/images/m8.jpg';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
-interface IAboutText {
+
+interface IEmailTo {
   classes: any;
 }
-
 interface ISocialMedia {
   icon: JSX.Element;
   link: string;
@@ -31,28 +31,29 @@ const socialMedia: ISocialMedia[] = [
 
 const useStyles = makeStyles(() => ({
   aboutImg: {
-    maxWidth: '30%',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    filter: 'grayscale(80%)',
+    gridColumnStart: 4,
+    gridColumnEnd: 4,
+    gridRowStart: 3,
+    gridRowEnd: 4,
+    maxWidth: '100%',
   },
   bio: {
-    color: 'white',
-    fontSize: '3rem',
+    color: '#fc173e',
+    fontSize: '5vh',
     fontWeight: 700,
-    gridColumn: '1 / 3',
-    gridRow: 1,
-    lineHeight: 1,
-    marginTop: '15px',
-    marginBottom: '15px',
-    paddingLeft: '15px',
-    paddingRight: '15px',
+    gridColumnStart: 2,
+    gridColumnEnd: 4,
+    gridRowStart: 2,
+    gridRowEnd: 2,
   },
   container: {
-    backgroundColor: '#191322',
+    // backgroundColor: '#191322',
     display: 'grid',
-    gridTemplateColumns: 'repeat(6, 1fr)',
-    gridGap: '10px',
-    gridAutoRows: 'minmax(100px, auto)',
-    minHeight: '100vh',
+    gridTemplateColumns: '20% 20% 20% 20% 20%',
+    gridTemplateRows: '20% 20% 20% 20% 20%',
+    maxHeight: '100vh'
   },
   email: {
     backgroundColor: '#FC173E',
@@ -63,57 +64,49 @@ const useStyles = makeStyles(() => ({
   },
   emailContainer: {
     cursor: 'pointer',
-    gridColumn: '1 / 2',
-    gridRow: 3,
+    gridColumnStart: 2,
+    gridColumnEnd: 3,
+    gridRowStart: 5,
     paddingLeft: '15px',
     paddingRight: '15px',
   },
   icon: {
     display: 'flex',
     justifyContent: 'space-between',
-    gridColumn: '1 / 3',
-    gridRow: 5,
-    paddingLeft: '15px',
-    paddingRight: '15px',
+    gridColumnStart: 2,
+    gridColumnEnd: 3,
+    gridRowStart: 5,
+    padding: 0
   },
   iconList: {
     listStyle: 'none',
   },
   redShape: {
-    backgroundColor: '#FC173E',
-    gridColumn: '1 / 1',
-    gridRow: '2 / span 1',
-    height: '100%',
+    backgroundColor: '#ffdd00',
+    gridColumnStart: 1,
+    gridColumnEnd: 3,
+    gridRowStart: 2,
+    gridRowEnd: 4,
   },
-  content: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    color: 'white',
-    fontSize: '1.1rem',
-    fontWeight: 200,
-    gridColumn: '1 / 7',
-    gridRow: 2,
-    lineHeight: 1.5,
-    paddingLeft: '15px',
-    paddingRight: '15px',
+  summaryText: {
+    // color: 'white',
+    gridColumnStart: 2,
+    gridColumnEnd: 4,
+    gridRowStart: 4,
+    gridRowEnd: 4,
   }
 }));
 
 const RedShape = ({ classes }: any) => <div className={classes}></div>
 
-const Content: React.FC<IAboutText> = ({ classes }) => (
-  <div className={classes.content}>
-    <div>
-      <HtmlText text={summaryText} />
-      <div className={classes.emailContainer}>
-        <a className={classes.email} href="mailto:michaeleze3@gmail.com">
-          Say Hi
+const EmailTo: React.FC<IEmailTo> = ({classes}) => (
+  <>
+    <div className={classes.emailContainer}>
+      <a className={classes.email} href="mailto:michaeleze3@gmail.com">
+        Say Hi
          </a>
-      </div>
-      <ul className={classes.icon}> {socialMedia.map(({ icon, link }) => <li className={classes.iconList}><a href={link}>{icon}</a></li>)}</ul>
     </div>
-    <img alt="about-michaeleze" className={classes.aboutImg} src={M8} />
-  </div>
+  </>
 )
 
 const About: React.FC = () => {
@@ -123,7 +116,10 @@ const About: React.FC = () => {
     <div className={classes.container}>
       <RedShape classes={classes.redShape} />
       <h1 className={classes.bio}>Bring Your Imaginations to Life</h1>
-      <Content classes={classes} />
+      <HtmlText classes={classes.summaryText} text={summaryText} />
+      <EmailTo classes={classes} />
+      <ul className={classes.icon}> {socialMedia.map(({ icon, link }) => <li className={classes.iconList}><a href={link}>{icon}</a></li>)}</ul>
+      <img alt="about-michaeleze" className={classes.aboutImg} src={M8} />
     </div>
   )
 }

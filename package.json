@@ -36,7 +36,10 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 4000",
     "start:dev": "concurrently --kill-others --raw \"npm run storybook\" \"npm run start\"",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:server": "tsc server/index",
+    "start:server": "node lib/index.js",
+    "run:server": " npm run build:server && npm run start:server"
   },
   "eslintConfig": {
     "extends": "react-app"

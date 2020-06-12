@@ -1,4 +1,4 @@
-import { About, Contact, Home, Work } from './pages';
+import { About, Contact, Home, Work } from './routes';
 
 export interface IRoutes {
     path: string;
@@ -6,7 +6,7 @@ export interface IRoutes {
     Component: React.FunctionComponent<{}>;
 }
 
-export const routes: IRoutes[] = [
+export const Routes: IRoutes[] = [
     { path: '/', name: 'Home', Component: Home },
     { path: '/about', name: 'About', Component: About },
     { path: '/contact', name: 'Contact', Component: Contact },
