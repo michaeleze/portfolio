@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleImage from '../../assets/images/title.png';
+import TitleImage from '../../../assets/images/title.png';
 import { useStyles } from './index.style';
 interface IHeaderText {
     textStrokeColor?: string;

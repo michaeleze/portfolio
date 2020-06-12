@@ -1,21 +1,24 @@
 import React, { ReactElement } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useStyles } from './index.style';
-interface ILayout {
+interface IHome {
+    classes?: any;
     columnOneBackground?: string;
     columnTwoBackground?: string;
     columnOneContent?: string | ReactElement;
     columnTwoContent?: string | ReactElement;
 }
 
-const Layout: React.FC<ILayout> = (props) => {
+const HomeTemplate: React.FC<IHome> = (props) => {
+    const useStyle = useStyles();
+
     const {
+        classes = useStyle,
         columnOneBackground = '#ff006d',
         columnTwoBackground = '#282c34',
         columnOneContent,
         columnTwoContent,
     } = props;
-    const classes = useStyles();
 
     return (
         <Grid container className={classes.container}>
@@ -39,4 +42,4 @@ const Layout: React.FC<ILayout> = (props) => {
     );
 };
 
-export default Layout;
+export default HomeTemplate;
