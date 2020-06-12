@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useStyles } from './index.styles';
 
 interface NavBarHeader {
@@ -22,9 +23,9 @@ const NavBarHeader: React.FC<NavBarHeader> = (props) => {
     return (
         <header className={classes.container}>
                 <div className={classes.box}>
-                    <div className={classes.title}>
+                    <Link className={classes.title} to='/'>
                         {title}
-                    </div>
+                    </Link>
                     <button className={classes.button} onClick={handleOpenMenu}>
                         <span className={classes.menu}>{menu}</span>
                         <span className={classes.hamburger}>

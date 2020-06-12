@@ -21,22 +21,22 @@ const App: React.FC = () => {
     <BrowserRouter>
         <NavBarHeader onClick={handleOpenMenu} openMenu={openMenu}/>
         <NavBar handleItemClick={handleItemClick} openMenu={openMenu}/>
-      {Routes.map(({ path, Component }: IRoutes) => (
-        <Route key={path} exact path={path}>
-          {({ match }) => (
-            <CSSTransition
-              in={match != null}
-              timeout={400}
-              classNames="page"
-              unmountOnExit
-            >
-              <div className="page">
-                <Component />
-              </div>
-            </CSSTransition>
-          )}
-        </Route>
-      ))}
+          {Routes.map(({ path, Component }: IRoutes) => (
+            <Route key={path} exact path={path}>
+              {({ match }) => (
+                <CSSTransition
+                  in={match != null}
+                  timeout={400}
+                  classNames="page"
+                  unmountOnExit
+                >
+                  <div className="page">
+                    <Component />
+                  </div>
+                </CSSTransition>
+              )}
+            </Route>
+          ))}
     </BrowserRouter>
   );
 }

@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useStyles } from './index.style';
-interface ILayout {
+interface IHome {
     classes?: any;
     columnOneBackground?: string;
     columnTwoBackground?: string;
@@ -9,8 +9,9 @@ interface ILayout {
     columnTwoContent?: string | ReactElement;
 }
 
-const Layout: React.FC<ILayout> = (props) => {
-    const useStyle = useStyles(); 
+const HomeTemplate: React.FC<IHome> = (props) => {
+    const useStyle = useStyles();
+
     const {
         classes = useStyle,
         columnOneBackground = '#ff006d',
@@ -41,4 +42,4 @@ const Layout: React.FC<ILayout> = (props) => {
     );
 };
 
-export default Layout;
+export default HomeTemplate;

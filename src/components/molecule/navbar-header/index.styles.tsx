@@ -16,7 +16,6 @@ export const useStyles = makeStyles(theme => ({
         border: 'none',
         cursor: 'pointer',
         display: 'flex',
-        padding: '10px 15px',
         flexGrow: 0,
         transition: 'all 1s ease',
         outline: 'none'
@@ -62,10 +61,15 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     menu: {
-      padding: '15px'
+      padding: '15px  0'
     },
     title: {
         flexGrow: 1,
-        padding: '15px 0'
+        padding: '15px',
+        textDecoration: 'none',
+
+        '&:hover': {
+            cursor: 'pointer'
+        }
     }
 }))

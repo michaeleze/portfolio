@@ -41,6 +41,7 @@ const NavBar: React.FC<INavbar> = (props) => {
                     <NavLink
                         activeClassName={classes.active}
                         className={classes.navLink}
+                        exact={true}
                         onClick={handleItemClick}
                         to={path}
                     >

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Layout from './index'; 
+import HomeTemplate from './index';
 
-export const header = () => <Layout />;
+export const homeTemplate = () => <HomeTemplate />;
 
 export default {
-  title: 'Home | Header',
+  title: 'HomeTemplate | HomeTemplate',
 };
