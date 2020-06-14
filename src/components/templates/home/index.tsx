@@ -1,31 +1,28 @@
 import React from 'react';
-import TwoColumnLayout, { ITwoColumnLayout } from '../../organisms/two-column-layout';
+import TwoColumnLayout from '../../organisms/two-column-layout';
 import { useStyles } from './index.styles';
+import Banner from '../../atoms/banner';
 
 interface IHomeTemplate {
-  data?: ITwoColumnLayout;
+  data?: any;
 }
 
 const HomeTemplate: React.FC<IHomeTemplate> = (props) => {
+  const { data } = props;
+  const { banner, content } = data;
+
   const classes = useStyles();
 
-  const {
-    data = {
-      content: {
-        leftColumn: <span> hello world</span>,
-        rightColumn: <span> welcome </span>,
-      },
-      styles: {
+  const styles = {
         leftColumn: classes.leftColumn,
         rightColumn: classes.rightColumn,
-      },
-    },
-  } = props;
-
-  const { content, styles } = data;
+      };
 
   return (
-    <TwoColumnLayout content={content} styles={styles} />
+      <>
+        <TwoColumnLayout content={content} styles={styles} />
+        <Banner src={banner}/>
+      </>
   );
 };
 

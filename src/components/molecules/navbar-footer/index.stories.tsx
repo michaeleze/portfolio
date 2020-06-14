@@ -1,10 +1,10 @@
 import * as React from 'react';
 import StoryRouter from 'storybook-react-router';
-import Footer from './index';
+import NavBarFooter from './index';
 
-export const footer = () => <Footer />;
+export const navBarFooter = () => <NavBarFooter />;
 
 export default {
-  title: 'Shared | Footer',
+  title: 'Molecules | NavBarFooter',
   decorators: [StoryRouter]
 };

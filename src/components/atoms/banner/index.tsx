@@ -1,18 +1,16 @@
 import React from 'react';
-import TitleImage from '../../../assets/images/title.png';
 import { useStyles } from './index.styles';
 
-interface IHeaderText {
-  textStrokeColor?: string;
-  text?: string;
+interface IBanner {
+  src?: string;
 }
 
-const Banner: React.FC<IHeaderText> = () => {
+const Banner: React.FC<IBanner> = ({ src }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.container}>
-      <img alt="michal eze" className={classes.img} src={TitleImage} />
+      <img alt="michal eze" className={classes.img} src={src} />
     </div>
   );
 };

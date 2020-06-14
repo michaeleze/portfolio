@@ -5,6 +5,6 @@ import NavBarHeader from './index';
 export const navBarHeader = () => <NavBarHeader />;
 
 export default {
-  title: 'Shared | NavBarHeader',
+  title: 'Molecules | NavBarHeader',
   decorators: [StoryRouter]
 };

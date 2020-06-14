@@ -1,8 +1,8 @@
 import * as React from 'react';
 import HtmlText from './index'; 
 
-export const summaryText = () => <HtmlText />;
+export const htmlText = () => <HtmlText />;
 
 export default {
-  title: 'About | Html Text',
+  title: 'Atoms | HTML Text',
 };

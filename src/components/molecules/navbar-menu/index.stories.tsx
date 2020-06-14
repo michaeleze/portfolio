@@ -1,10 +1,10 @@
 import * as React from 'react';
 import StoryRouter from 'storybook-react-router';
-import NavBar from './index'; 
+import NavBarMenu from './index';
 
-export const navbar = () => <NavBar />;
+export const navBarMenu = () => <NavBarMenu />;
 
 export default {
-  title: 'Shared | NavBar',
+  title: 'Molecules | NavBarMenu',
   decorators: [StoryRouter]
 };

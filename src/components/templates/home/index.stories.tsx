@@ -4,5 +4,5 @@ import HomeTemplate from './index';
 export const homeTemplate = () => <HomeTemplate />;
 
 export default {
-  title: 'HomeTemplate | HomeTemplate',
+  title: 'Templates | HomeTemplate',
 };

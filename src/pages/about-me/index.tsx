@@ -41,7 +41,7 @@ const EmailTo: React.FC<IEmailTo> = ({classes}) => (
   </>
 )
 
-const About: React.FC = () => {
+const AboutMe: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -64,4 +64,4 @@ const About: React.FC = () => {
   )
 }
 
-export default About;
+export default AboutMe;

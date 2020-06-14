@@ -1,8 +1,8 @@
 import * as React from 'react';
-import HomeTemplate from './index';
+import TwoColumnLayout from './index';
 
-export const homeTemplate = () => <HomeTemplate />;
+export const twoColumnLayout = () => <TwoColumnLayout />;
 
 export default {
-  title: 'HomeTemplate | HomeTemplate',
+  title: 'Organisms | TwoColumnLayout',
 };
