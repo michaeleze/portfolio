@@ -1,44 +1,46 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group'
-import NavBar from './components/organism/navbar';
+import { CSSTransition } from 'react-transition-group';
 import { Routes, IRoutes } from './routes';
 import './index.css';
-import NavBarHeader from "./components/molecule/navbar-header";
+import NavBarMenu from './components/molecule/navbar-menu';
+import NavBarHeader from './components/molecule/navbar-header';
 
 const App: React.FC = () => {
-    const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
-    const handleItemClick = () => {
-        setOpenMenu(false);
-    };
+  const handleItemClick = () => {
+    setOpenMenu(false);
+  };
 
-    const handleOpenMenu = () => {
-        setOpenMenu(!openMenu);
-    };
+  const handleOpenMenu = () => {
+    setOpenMenu(!openMenu);
+  };
 
   return (
     <BrowserRouter>
-        <NavBarHeader onClick={handleOpenMenu} openMenu={openMenu}/>
-        <NavBar handleItemClick={handleItemClick} openMenu={openMenu}/>
-          {Routes.map(({ path, Component }: IRoutes) => (
-            <Route key={path} exact path={path}>
-              {({ match }) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={400}
-                  classNames="page"
-                  unmountOnExit
-                >
-                  <div className="page">
-                    <Component />
-                  </div>
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
+      <header>
+        <NavBarHeader onClick={handleOpenMenu} openMenu={openMenu} />
+        <NavBarMenu handleItemClick={handleItemClick} openMenu={openMenu} />
+      </header>
+      {Routes.map(({ path, Component }: IRoutes) => (
+        <Route exact key={path} path={path}>
+          {({ match }) => (
+            <CSSTransition
+              unmountOnExit
+              classNames="page"
+              in={match != null}
+              timeout={400}
+            >
+              <div className="page">
+                <Component />
+              </div>
+            </CSSTransition>
+          )}
+        </Route>
+      ))}
     </BrowserRouter>
   );
-}
+};
 
 export default App;

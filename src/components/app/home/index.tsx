@@ -1,15 +1,13 @@
-import React from 'react';
-import HomeTemplate from '../../../components/template/home';
-import Title from '../../../components/atom/title';
+import React, { Suspense, lazy } from 'react';
 
-const ColumnOneBackground = '#191322';
-const ColumnTwoBackground = '#FC173E';
+const Template = lazy(() => import('../../../components/template/home'));
+const PageTitle = lazy(() => import('../../atom/banner'));
 
 const Home: React.FC = () => (
-    <section>
-        <HomeTemplate columnOneBackground={ColumnOneBackground} columnTwoBackground={ColumnTwoBackground} />
-        <Title />
-    </section>
-)
+  <Suspense fallback={<div>Loading...</div>}>
+    <Template />
+    <PageTitle />
+  </Suspense>
+);
 
 export default Home;

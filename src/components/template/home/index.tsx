@@ -1,45 +1,26 @@
-import React, { ReactElement } from 'react';
-import Grid from '@material-ui/core/Grid';
-import { useStyles } from './index.style';
-interface IHome {
-    classes?: any;
-    columnOneBackground?: string;
-    columnTwoBackground?: string;
-    columnOneContent?: string | ReactElement;
-    columnTwoContent?: string | ReactElement;
-}
+import React from 'react';
+import { useStyles } from './index.styles';
+import TwoColumnLayout, { ITwoColumnLayout } from '../../organism/two-column-layout';
 
-const HomeTemplate: React.FC<IHome> = (props) => {
-    const useStyle = useStyles();
+const mockContent = {
+  leftColumn: <h1> hello world</h1>,
+  rightColumn: <p> welcome </p>,
+};
 
-    const {
-        classes = useStyle,
-        columnOneBackground = '#ff006d',
-        columnTwoBackground = '#282c34',
-        columnOneContent,
-        columnTwoContent,
-    } = props;
+const ColumnOneBackground = '#191322';
+const ColumnTwoBackground = '#FC173E';
 
-    return (
-        <Grid container className={classes.container}>
-            <Grid
-                item
-                className={classes.columnOne}
-                children={columnOneContent}
-                sm={6}
-                style={{ background: columnOneBackground, backgroundSize: 'contain'}}
-                xs={12}
-            />
-            <Grid
-                item
-                className={classes.columnTwo}
-                children={columnTwoContent}
-                sm={6}
-                style={{ background: columnTwoBackground, backgroundSize: 'cover' }}
-                xs={12}
-            />
-        </Grid>
-    );
+const HomeTemplate: React.FC<ITwoColumnLayout> = (props) => {
+  const classes = useStyles();
+
+  const {
+    content = mockContent,
+    styles,
+  } = props;
+
+  return (
+    <TwoColumnLayout content={content} />
+  );
 };
 
 export default HomeTemplate;

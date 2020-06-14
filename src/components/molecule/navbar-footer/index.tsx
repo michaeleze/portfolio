@@ -2,44 +2,44 @@ import React from 'react';
 import { useStyles } from './index.styles';
 
 export interface ISocialMedia {
-    link: string;
-    icon: JSX.Element;
-};
-
-export interface IFooter{
-    footer?: string;
-    socialMedia?: Array<ISocialMedia>;
+  link: string;
+  icon: JSX.Element;
 }
 
-const Footer: React.FC<IFooter> = (props) => {
-    const {
-        footer,
-        socialMedia = []
-    } = props;
+export interface IFooter{
+  text?: string;
+  socialMedia?: Array<ISocialMedia>;
+}
 
-    const classes = useStyles();
+const NavBarFooter: React.FC<IFooter> = (props) => {
+  const {
+    text,
+    socialMedia = [],
+  } = props;
 
-    return (
-            <div className={classes.navFooter}>
-                <ul className={classes.socialMedia}>
-                    {
-                        socialMedia && socialMedia.map((item) => (
-                            <li  className={classes.socialMediaIcon} key={item.link}>
-                                <a
-                                    className={classes.icon}
-                                    href={item.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {item.icon}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-                <p className={classes.footer}>{footer}</p>
-            </div>
-    );
+  const classes = useStyles();
+
+  return (
+    <>
+      <ul className={classes.socialMedia}>
+        {
+          socialMedia && socialMedia.map((item) => (
+            <li className={classes.socialMediaIcon} key={item.link}>
+              <a
+                className={classes.icon}
+                href={item.link}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {item.icon}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p className={classes.footer}>{text}</p>
+    </>
+  );
 };
 
-export default Footer;
+export default NavBarFooter;
