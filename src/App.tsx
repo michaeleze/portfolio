@@ -1,44 +1,51 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group'
-import NavBar from './components/organism/navbar';
-import { Routes, IRoutes } from './routes';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import NavBarHeader from "./components/molecule/navbar-header";
+import NavBarMenu from './components/molecules/navbar-menu';
+import NavBarHeader from './components/molecules/navbar-header';
+import { routes } from './routes/routes';
+import Routes from "./routes";
+import {FaGithub, FaInstagram, FaLinkedin, FaXing} from "react-icons/all";
+
+const mockSocialMediaItems = [
+    {
+        link: 'https://linkedin.com/in/michaeleze',
+        icon: <FaLinkedin />,
+    },
+    {
+        link: 'https://instagram.com/michaelcityboy',
+        icon: <FaInstagram />,
+    },
+    {
+        link: 'https://xing.com/michaeleze',
+        icon: <FaXing />,
+    },
+    {
+        link: 'https://github.com/michaeleze',
+        icon: <FaGithub />,
+    },
+];
 
 const App: React.FC = () => {
-    const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
-    const handleItemClick = () => {
-        setOpenMenu(false);
-    };
+  const handleCloseMenu = () => {
+    setOpenMenu(false);
+  };
 
-    const handleOpenMenu = () => {
-        setOpenMenu(!openMenu);
-    };
+  const handleOpenMenu = () => {
+    setOpenMenu(!openMenu);
+  };
 
   return (
     <BrowserRouter>
-        <NavBarHeader onClick={handleOpenMenu} openMenu={openMenu}/>
-        <NavBar handleItemClick={handleItemClick} openMenu={openMenu}/>
-          {Routes.map(({ path, Component }: IRoutes) => (
-            <Route key={path} exact path={path}>
-              {({ match }) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={400}
-                  classNames="page"
-                  unmountOnExit
-                >
-                  <div className="page">
-                    <Component />
-                  </div>
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
+      <header>
+        <NavBarHeader handleOpenMenu={handleOpenMenu} handleCloseMenu={handleCloseMenu} openMenu={openMenu} />
+        <NavBarMenu handleCloseMenu={handleCloseMenu} openMenu={openMenu} routes={routes} socialMedia={mockSocialMediaItems}/>
+      </header>
+      <Routes />
     </BrowserRouter>
   );
-}
+};
 
 export default App;

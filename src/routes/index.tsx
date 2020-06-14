@@ -1,14 +1,30 @@
-import { About, Contact, Home, Work } from './routes';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import './index.css';
+import { CSSTransition } from 'react-transition-group';
+import { routes, IRoutes } from './routes';
 
-export interface IRoutes {
-    path: string;
-    name: string;
-    Component: React.FunctionComponent<{}>;
+const Routes: React.FC = () => {
+  return (
+      <>
+        {routes.map(({ path, Component }: IRoutes) => (
+            <Route exact key={path} path={path}>
+              {({ match }) => (
+                  <CSSTransition
+                      unmountOnExit
+                      classNames={"page"}
+                      in={match != null}
+                      timeout={400}
+                  >
+                    <div className="page">
+                      <Component />
+                    </div>
+                  </CSSTransition>
+              )}
+            </Route>
+        ))}
+      </>
+  );
 }
 
-export const Routes: IRoutes[] = [
-    { path: '/', name: 'Home', Component: Home },
-    { path: '/about', name: 'About', Component: About },
-    { path: '/contact', name: 'Contact', Component: Contact },
-    { path: '/work', name: 'Work', Component: Work },
-]
+export default Routes;

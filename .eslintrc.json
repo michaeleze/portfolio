@@ -1,0 +1,150 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "babel",
+    "promise",
+    "react",
+    "standard",
+    "unicorn",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "globals": {
+    "__DEV__": false,
+    "__test__": false,
+    "__PROD__": false,
+    "__COVERAGE__": false
+  },
+  "rules": {
+    "curly": ["error", "all"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/prefer-default-export": 0,
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "global-require": 0,
+    "key-spacing": "off",
+    "max-len": [0, 220, 2],
+    "no-negated-condition": "error",
+    "object-curly-spacing": [2, "always"],
+    "object-property-newline": [1, {
+      "allowAllPropertiesOnSameLine": false
+    }],
+    "sort-keys": 1,
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-sort-props": [2, {
+      "shorthandFirst": true
+    }],
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "off",
+    "react/prefer-stateless-function": "warn",
+    "react/prop-types": [0],
+    "promise/always-return": "error",
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "error",
+    "promise/catch-or-return": "error",
+    "promise/no-new-statics": "error",
+    "promise/no-nesting": "error",
+    "standard/no-callback-literal": [2, ["cb", "callback"]],
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-array-instanceof": "error",
+    "unicorn/throw-new-error": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/error-message": "error",
+    "unicorn/no-unsafe-regex": "warn",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/alt-text": [
+      2,
+      {
+        "elements": ["img", "object", "area", "input[type=\"image\"]"],
+        "img": ["Image"],
+        "object": ["Object"],
+        "area": ["Area"],
+        "input[type=\"image\"]": ["InputImage"]
+      }
+    ],
+    "jsx-a11y/img-redundant-alt": [
+      2,
+      {
+        "components": ["Image"],
+        "words": ["Bild", "Foto"]
+      }
+    ],
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".tsx", ".jsx"]
+    }],
+    "import/no-duplicates": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "vars": "all",
+      "args": "after-used",
+      "ignoreRestSiblings": false
+    }],
+    "@typescript-eslint/indent": [1, 2],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/interface-name-prefix": ["error", "always"],
+    "@typescript-eslint/no-object-literal-type-assertion": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+     "files": ["*.stories.*"],
+        "rules": {
+           "test-selectors/anchor": "off",
+           "test-selectors/button": "off",
+           "test-selectors/input": "off",
+           "test-selectors/onClick": "off",
+           "test-selectors/onChange": "off",
+           "test-selectors/onKeyDown": "off",
+           "test-selectors/onKeyUp" : "off"
+        }
+    },
+    {
+      "files": ["*.styles.*"],
+        "rules": {
+          "sort-keys": "off"
+        }
+    },
+    {
+      "files": ["**/types/*.ts"],
+        "rules": {
+          "unicorn/no-abusive-eslint-disable": "off"
+        }
+    }
+  ]
+}

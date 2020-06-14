@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import HtmlText from '../../atom/html-text';
-import M8 from '../../../assets/images/m8.jpg';
+import HtmlText from '../../components/atoms/html-text';
+import M8 from '../../assets/images/m8.jpg';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';

@@ -1,4 +1,30 @@
-export { default as About } from '../components/app/about';
-export { default as Contact } from '../components/app/contact';
-export { default as Home } from '../components/app/home';
-export { default as Work } from '../components/app/work';
+import { About, Contact, Home, Work } from '.././pages';
+
+export interface IRoutes {
+    path: string;
+    name: string;
+    Component: React.FunctionComponent;
+}
+
+export const routes: Array<IRoutes> = [
+    {
+        path: '/',
+        name: 'Home',
+        Component: Home,
+    },
+    {
+        path: '/about',
+        name: 'About',
+        Component: About,
+    },
+    {
+        path: '/contact',
+        name: 'Contact',
+        Component: Contact,
+    },
+    {
+        path: '/work',
+        name: 'Work',
+        Component: Work,
+    }
+];
