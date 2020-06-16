@@ -1,11 +1,11 @@
 import React from 'react';
-import { useStyles } from './index.styles';
-import HtmlText from '../../components/atoms/html-text';
-import M8 from '../../assets/images/m8.jpg';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import M8 from '../../assets/images/m8.jpg';
+import HtmlText from '../../components/atoms/html-text';
+import { useStyles } from './index.styles';
 
 interface IEmailTo {
   classes: any;
@@ -15,7 +15,7 @@ interface ISocialMedia {
   link: string;
 }
 
-const summaryText: string = `<p> I am a software engineer, designer and UX expert skilled in latest Frontend technology (such as React JS, Typescript,
+const summaryText = `<p> I am a software engineer, designer and UX expert skilled in latest Frontend technology (such as React JS, Typescript,
   GraphQl), with solid experience using a well structured approach to find solutions for complex technical challenges</p>
      `;
 
@@ -23,23 +23,35 @@ const summaryText: string = `<p> I am a software engineer, designer and UX exper
 //  <p> I don't just build software but love to train and mentor young aspiring tech enthusiast who love to code. <br /> Hobbies include programming, dancing, music, cooking and sports(basket ball and football).</p>`;
 
 const socialMedia: ISocialMedia[] = [
-  { icon: <LinkedInIcon />, link: 'https://linkedin.com/in/michaeleze' },
-  { icon: <TwitterIcon />, link: 'https://twitter.com/michaelcityboy' },
-  { icon: <GitHubIcon />, link: 'https://github.com/michaeleze' },
-  { icon: <InstagramIcon />, link: 'https://instagram.com/michaeleze3' },
-]
+  {
+    icon: <LinkedInIcon />,
+    link: 'https://linkedin.com/in/michaeleze',
+  },
+  {
+    icon: <TwitterIcon />,
+    link: 'https://twitter.com/michaelcityboy',
+  },
+  {
+    icon: <GitHubIcon />,
+    link: 'https://github.com/michaeleze',
+  },
+  {
+    icon: <InstagramIcon />,
+    link: 'https://instagram.com/michaeleze3',
+  },
+];
 
-const RedShape = ({ classes }: any) => <div className={classes}></div>
+const RedShape = ({ classes }: any) => <div className={classes} />;
 
-const EmailTo: React.FC<IEmailTo> = ({classes}) => (
+const EmailTo: React.FC<IEmailTo> = ({ classes }) => (
   <>
     <div className={classes.emailContainer}>
       <a className={classes.email} href="mailto:michaeleze3@gmail.com">
         Say Hi
-         </a>
+      </a>
     </div>
   </>
-)
+);
 
 const AboutMe: React.FC = () => {
   const classes = useStyles();
@@ -53,15 +65,15 @@ const AboutMe: React.FC = () => {
       <ul className={classes.icon}>
         {
           socialMedia.map(({ icon, link }) => (
-              <li className={classes.iconList} key={link}>
-                <a href={link}>{icon}</a>
-              </li>
+            <li className={classes.iconList} key={link}>
+              <a href={link}>{icon}</a>
+            </li>
           ))
         }
       </ul>
       <img alt="about-michaeleze" className={classes.aboutImg} src={M8} />
     </div>
-  )
-}
+  );
+};
 
 export default AboutMe;

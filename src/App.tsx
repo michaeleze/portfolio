@@ -7,7 +7,7 @@ import { routes } from './routes/routes';
 import Routes from "./routes";
 import {FaGithub, FaInstagram, FaLinkedin, FaXing} from "react-icons/all";
 
-const mockSocialMediaItems = [
+export const mockSocialMediaItems = [
     {
         link: 'https://linkedin.com/in/michaeleze',
         icon: <FaLinkedin />,

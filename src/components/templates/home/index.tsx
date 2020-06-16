@@ -14,15 +14,15 @@ const HomeTemplate: React.FC<IHomeTemplate> = (props) => {
   const classes = useStyles();
 
   const styles = {
-        leftColumn: classes.leftColumn,
-        rightColumn: classes.rightColumn,
-      };
+    leftColumn: classes.leftColumn,
+    rightColumn: classes.rightColumn,
+  };
 
   return (
-      <>
-        <TwoColumnLayout content={content} styles={styles} />
-        <Banner src={banner}/>
-      </>
+    <>
+      <TwoColumnLayout content={content} styles={styles} />
+      <Banner src={banner} />
+    </>
   );
 };
 

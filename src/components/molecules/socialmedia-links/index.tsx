@@ -6,23 +6,23 @@ export interface ISocialMedia {
   icon: JSX.Element;
 }
 
-export interface IFooter{
-  text?: string;
+export interface ISocialMediaLinks{
+  styles?: any;
   socialMedia?: Array<ISocialMedia>;
 }
 
-const NavBarFooter: React.FC<IFooter> = (props) => {
+const SocialMediaLinks: React.FC<ISocialMediaLinks> = (props) => {
   const {
-    text,
+    styles,
     socialMedia = [],
   } = props;
 
-  const classes = useStyles();
+  const defaultClasses = useStyles();
+  const classes = styles || defaultClasses;
 
   return (
-    <>
-      <ul className={classes.socialMedia}>
-        {
+    <ul className={classes.socialMedia}>
+      {
           socialMedia?.map((item) => (
             <li className={classes.socialMediaIcon} key={item.link}>
               <a
@@ -35,11 +35,9 @@ const NavBarFooter: React.FC<IFooter> = (props) => {
               </a>
             </li>
           ))
-        }
-      </ul>
-      <p className={classes.footer}>{text}</p>
-    </>
+      }
+    </ul>
   );
 };
 
-export default NavBarFooter;
+export default SocialMediaLinks;

@@ -4,12 +4,12 @@ import { useStyles } from './index.styles';
 
 export interface ITwoColumnLayout {
   content?: {
-    leftColumn: ReactElement | undefined;
-    rightColumn: ReactElement | undefined;
+    leftColumn?: ReactElement | undefined;
+    rightColumn?: ReactElement | undefined;
   };
   styles?: {
-    leftColumn: string | undefined;
-    rightColumn: string | undefined;
+    leftColumn?: string | undefined;
+    rightColumn?: string | undefined;
   };
 }
 
