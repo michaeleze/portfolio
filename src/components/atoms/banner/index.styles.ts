@@ -2,23 +2,24 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
   container: {
-    color: '#fff',
-    display: 'flex',
-    fontSize: '21vw',
-    left: '0',
-    lineHeight: 1,
-    maxWidth: '90%',
+    position: 'relative',
+    maxWidth: '100%',
+
+  },
+
+  text: {
     position: 'absolute',
     right: '0',
     top: '50%',
+    margin: 'auto auto',
+    left: '0',
+    lineHeight: 1,
+    color: '#fff',
     transform: 'translateY(-50%)',
     textTransform: 'uppercase',
-    fontWeight: 900,
+    fontWeight: 'bold',
+    fontSize: '10em',
     textAlign: 'left',
-    zIndex: 1,
-  },
-
-  img: {
-    width: '100%',
+    whiteSpace: 'pre-line'
   },
 }));
