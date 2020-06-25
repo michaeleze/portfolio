@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useStyles } from './index.styles';
 import { IRoutes } from '../../../routes/routes';
-import NavBarFooter, { ISocialMedia } from '../navbar-footer';
+import NavBarFooter, { ISocialMedia } from '../../molecules/navbar-footer';
 
 interface INavbar {
   footer?: string;

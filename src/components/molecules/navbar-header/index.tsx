@@ -12,7 +12,7 @@ interface NavBarHeader {
 
 const NavBarHeader: React.FC<NavBarHeader> = (props) => {
   const {
-    menu = 'MENU',
+    menu = 'Menu',
     handleCloseMenu,
     handleOpenMenu,
     openMenu,
@@ -23,7 +23,7 @@ const NavBarHeader: React.FC<NavBarHeader> = (props) => {
   const buttonMenu = openMenu ? classes.lineCross : classes.lineOpen;
 
   return (
-    <div className={classes.container}>
+    <div className={`${classes.container} ${openMenu && classes.whiteBackground}`}>
       <div className={classes.box}>
         <div className={classes.title}>
           <Link className={classes.text} onClick={handleCloseMenu} to="/">

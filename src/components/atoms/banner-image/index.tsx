@@ -5,12 +5,12 @@ interface IBanner {
   src?: string;
 }
 
-const Banner: React.FC<IBanner> = ({ text= `MIC\nHAEL` }: any) => {
+const Banner: React.FC<IBanner> = ({ src }) => {
   const classes = useStyles();
 
   return (
-    <div>
-      <h1 className={classes.text}>{text}</h1>
+    <div className={classes.container}>
+      <img alt="michal eze" className={classes.img} src={src} />
     </div>
   );
 };

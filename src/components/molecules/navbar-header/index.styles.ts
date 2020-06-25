@@ -12,6 +12,10 @@ export const useStyles = makeStyles((theme) => ({
     padding: '1rem 0',
     width: '100%',
     zIndex: 3,
+    backdropFilter: 'saturate(147%) blur(20px)',
+    transition: 'background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1)',
+    transitionProperty: 'background-color, backdrop-filter',
+    backgroundColor: 'rgba(0,0,0,.1)',
   },
 
   button: {
@@ -30,7 +34,6 @@ export const useStyles = makeStyles((theme) => ({
     transition: 'all 1s ease',
 
     '&:hover': {
-      border: '1px solid #ffdd00',
       borderRadius: '6px',
     },
   },
@@ -75,11 +78,21 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   menu: {
-    padding: '15px  0',
+    padding: '11px  0',
+    fontWeight: 'lighter',
+    fontSize: '1.3em',
+    textTransform: 'capitalize'
   },
 
   title: {
     flexGrow: 1,
     padding: '15px',
+  },
+
+  whiteBackground: {
+    transition: 'background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1)',
+    transitionProperty: 'background-color',
+    backgroundColor: 'white',
+    borderBottom: '1px solid black'
   },
 }));

@@ -1,4 +1,4 @@
-import { AboutMe, Contact, Home, Work } from '.././pages';
+import { AboutMe, Apps, Contact, Home, Work } from '.././pages';
 
 export interface IRoutes {
     path: string;
@@ -26,5 +26,10 @@ export const routes: Array<IRoutes> = [
         path: '/work',
         name: 'Work',
         Component: Work,
+    },
+    {
+        path: '/apps',
+        name: 'Apps',
+        Component: Apps,
     }
 ];

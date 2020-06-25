@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStyles } from './index.styles';
+import SocialMediaLinks from "../../molecules/socialmedia-links";
 
 export interface ISocialMedia {
   link: string;
@@ -21,22 +22,7 @@ const NavBarFooter: React.FC<IFooter> = (props) => {
 
   return (
     <>
-      <ul className={classes.socialMedia}>
-        {
-          socialMedia?.map((item) => (
-            <li className={classes.socialMediaIcon} key={item.link}>
-              <a
-                className={classes.icon}
-                href={item.link}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {item.icon}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <SocialMediaLinks socialMedia={socialMedia} />
       <p className={classes.footer}>{text}</p>
     </>
   );
