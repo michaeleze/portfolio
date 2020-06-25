@@ -11,7 +11,7 @@ export const useStyles = makeStyles(() => ({
         maxWidth: '100%',
     },
     bio: {
-        color: '#fc173e',
+        color: '#000',
         fontSize: '5vh',
         fontWeight: 700,
         gridColumnStart: 2,

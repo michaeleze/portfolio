@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 
 async function apiLocaHost() {
-  const data = await fetch('https://us-central1-portfoliowebsite-23bb3.cloudfunctions.net/server/work');
+  const data = await fetch('http://localhost:8003');
 
   if (!data) {
     return Promise.reject(Error('could not retrieve data'));
@@ -11,14 +11,15 @@ async function apiLocaHost() {
   return Promise.resolve(data);
 }
 
-const Work: React.FC = () => {
+const Apps: React.FC = () => {
   const [state, setState] = useState(null as any);
 
   useEffect(() => {
     apiLocaHost()
-      .then((response) => response!.json()
+      .then((response) => response?.text()
             .then((res) => {
-              setState(res!.data);
+              console.log(JSON.parse(res));
+              setState(res);
             }))
       .catch((error) => { throw Error(error); });
   }, [state]);
@@ -39,4 +40,4 @@ const Work: React.FC = () => {
   );
 };
 
-export default Work;
+export default Apps;

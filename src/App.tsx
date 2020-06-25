@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import NavBarMenu from './components/molecules/navbar-menu';
+import NavBarMenu from './components/organisms/navbar-menu';
 import NavBarHeader from './components/molecules/navbar-header';
 import { routes } from './routes/routes';
 import Routes from "./routes";
 import {FaGithub, FaInstagram, FaLinkedin, FaXing} from "react-icons/all";
 
-const mockSocialMediaItems = [
+export const mockSocialMediaItems = [
     {
         link: 'https://linkedin.com/in/michaeleze',
         icon: <FaLinkedin />,
