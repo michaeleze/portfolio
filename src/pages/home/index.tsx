@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     banner: TitleImage,
     content: {
       leftColumn: <span> hello world</span>,
-      rightColumn: <img srcSet={Me} style={{width: '100%', margin: 'auto auto', textAlign: "center"}} />
+      rightColumn: <img alt="me" srcSet={Me} style={{width: '100%', margin: 'auto auto', textAlign: "center"}} />
     },
   };
 
