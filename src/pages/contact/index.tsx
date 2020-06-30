@@ -26,7 +26,7 @@ const ContactContent: React.FC<any> = ({
     </div>
     <SocialMediaLinks socialMedia={mockSocialMediaItems} styles={classes} />
     <p>
-      <span>{footer}</span> <a className={classes.email} href=`mailto:${email}?` subject={headline}>{email}</a>
+      <span>{footer}</span> <a className={classes.email} href={`mailto:${email}?`}>{email}</a>
     </p>
   </div>
 );
